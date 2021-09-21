@@ -10,6 +10,8 @@ jobs:
 
           pullRequestOpened: |
           Thank you for your contribution. Here is how your changes will differ from Hector v2.5.0.
-          run: C:\Users\pres520\Documents\comment_test\v3_v25_diff
-          
+          run: 
+            script:
+            - Rscript "C:\Users\pres520\Documents\comment_test\v3_v25_diff.R"
+        
             
