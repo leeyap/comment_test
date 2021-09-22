@@ -7,6 +7,6 @@ jobs:
       - uses: wow-actions/auto-comment@v1
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-         pullRequestOpened: |
+          pullRequestOpened: |
+            👋 @{{ author }}
             Thank you for your contribution. Here is how your changes will differ from Hector v2.5.0.
