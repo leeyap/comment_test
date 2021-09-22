@@ -59,7 +59,7 @@ jobs:
       - name: Run Script
         on: [pull_request]
         jobs:
-        run: |
+        run: 
            source("C:\Users\pres520\Documents\comment_test\v3_v25_diff.R")
            shell: Rscript {0}
 
