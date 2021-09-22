@@ -56,10 +56,10 @@ jobs:
                GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
                pullRequestOpened: |
                   Thank you for your contribution. Here is how your changes will differ from Hector v2.5.0.
-       - name: Run Script
-       on: [pull_request]
-       jobs:
-       run: |
+      - name: Run Script
+        on: [pull_request]
+        jobs:
+        run: |
            source("C:\Users\pres520\Documents\comment_test\v3_v25_diff.R")
            shell: Rscript {0}
 
