@@ -1,4 +1,5 @@
 name: Modified Auto Comment
+script:  '`r system.file("Documents\comment_test", "v3_v25_diff.R")`'
 on: [pull_request]
 jobs:
   run:
@@ -10,5 +11,4 @@ jobs:
 
           pullRequestOpened: |
           Thank you for your contribution. Here is how your changes will differ from Hector v2.5.0.
-          script: |
-            '`r system.file("Documents\comment_test", "v3_v25_diff.R")`'
+          run: | script
