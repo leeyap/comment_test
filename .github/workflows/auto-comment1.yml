@@ -54,9 +54,9 @@ jobs:
            - uses: wow-actions/auto-comment@v1
              with:
                GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-               pullRequestOpened: |
-                  Thank you for your contribution. Here is how your changes will differ from Hector v2.5.0.
-                  run: |
-                    source("C:\Users\pres520\Documents\comment_test\v3_v25_diff.R")
-                  shell: Rscript {0}
+          pullRequestOpened: |
+            Thank you for your contribution. Here is how your changes will differ from Hector v2.5.0.
+            run: |
+            source("C:\Users\pres520\Documents\comment_test\v3_v25_diff.R")
+            shell: Rscript {0}
 
