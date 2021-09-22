@@ -46,9 +46,9 @@ jobs:
         shell: Rscript {0}
 
       - name: Modified Auto Comment
-      on: [pull_request]
-      jobs:
-      run:
+        on: [pull_request]
+        jobs:
+        run:
           runs-on: ubuntu-latest
           steps:
            - uses: wow-actions/auto-comment@v1
