@@ -1,5 +1,5 @@
 name: Modified Auto Comment
-on: [pull_request]
+on: [push]
 jobs:
   run:
     runs-on: ubuntu-latest
@@ -10,3 +10,11 @@ jobs:
           pullRequestOpened: |
             👋 @{{ author }}
             Thank you for your contribution. Here is how your changes will differ from Hector v2.5.0.
+          
+          pullRequestEdited: |
+            👋 @{{ author }}
+            Nice edit. Here is how your updated changes will differ from Hector v2.5.0.
+            
+          pullRequestClosed: |
+            👋 @{{ author }}
+            Alright! Here is how this pull request differs from Hector v2.5.0.
