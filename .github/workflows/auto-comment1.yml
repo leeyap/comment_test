@@ -48,7 +48,6 @@ jobs:
         shell: Rscript {0}
 
       - name: Auto comment
-        on: [pull_request]
         jobs:
         run: 
           runs-on: ubuntu-latest
