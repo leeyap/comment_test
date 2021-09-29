@@ -48,7 +48,6 @@ jobs:
         shell: Rscript {0}
 
       - name: Auto comment
-        jobs:
         run: 
           runs-on: ubuntu-latest
           steps:
