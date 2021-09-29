@@ -7,7 +7,7 @@ jobs:
       - uses: wow-actions/auto-comment@v1
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          issuesOpened: |
+          pullRequestEdited: |
             👋 @{{ author }}
             Thank you for raising an issue. We will will investigate into the matter and get back to you as soon as possible.
             Please make sure you have given us as much context as possible.
