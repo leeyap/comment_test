@@ -49,7 +49,8 @@ jobs:
 
 
       - name: run script 
-        shell: Rscript v3_v25_diff.R
+        run: |
+           echo "we are here"
              
       - name: generate comment
         uses: wow-actions/auto-comment@v1
