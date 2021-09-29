@@ -2,7 +2,7 @@ name: test auto comment
 on: [push]
 jobs:
   test-coverage:
-    runs-on: macOS-latest
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
 
@@ -33,7 +33,3 @@ jobs:
             👋 @{{ author }}
             Nice edit. Here is how your updated changes will differ from Hector v2.5.0.
             
-          pullRequestClosed: |
-            👋 @{{ author }}
-            Alright! Here is how this pull request differs from Hector v2.5.0.
-
