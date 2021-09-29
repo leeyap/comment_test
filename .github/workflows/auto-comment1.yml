@@ -1,3 +1,5 @@
+name: test auto comment
+on: [push]
 jobs:
   generate-data:
     runs-on: ${{ matrix.config.os }}
