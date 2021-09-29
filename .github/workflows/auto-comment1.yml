@@ -47,26 +47,23 @@ jobs:
           remotes::install_deps(dependencies = TRUE)
         shell: Rscript {0}
 
-      - name: Auto comment
-        run: 
-          runs-on: ubuntu-latest
-          steps:
-           - name: run script 
-             shell: Rscript v3_v25_diff.R
+
+      - name: run script 
+        shell: Rscript v3_v25_diff.R
              
-           - name: generate comment
-           - uses: wow-actions/auto-comment@v1
-             with:
-               GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-               pullRequestOpened: |
-                 👋 @{{ author }}
-                 Thank you for your contribution. Here is how your changes will differ from Hector v2.5.0.
+      - name: generate comment
+        uses: wow-actions/auto-comment@v1
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          pullRequestOpened: |
+            👋 @{{ author }}
+            Thank you for your contribution. Here is how your changes will differ from Hector v2.5.0.
           
-               pullRequestEdited: |
-                 👋 @{{ author }}
-                 Nice edit. Here is how your updated changes will differ from Hector v2.5.0.
+          pullRequestEdited: |
+            👋 @{{ author }}
+            Nice edit. Here is how your updated changes will differ from Hector v2.5.0.
             
-               pullRequestClosed: |
-                 👋 @{{ author }}
-                 Alright! Here is how this pull request differs from Hector v2.5.0.
+          pullRequestClosed: |
+            👋 @{{ author }}
+            Alright! Here is how this pull request differs from Hector v2.5.0.
 
