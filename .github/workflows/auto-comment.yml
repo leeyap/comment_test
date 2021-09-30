@@ -1,5 +1,5 @@
 name: Modified Auto Comment
-on: [push]
+on: [push, issues, pull_request]
 jobs:
   run:
     runs-on: ubuntu-latest
@@ -18,3 +18,6 @@ jobs:
           pullRequestClosed: |
             👋 @{{ author }}
             Alright! Here is how this pull request differs from Hector v2.5.0.
+            
+          issuesOpened: |
+            Will this work? 
