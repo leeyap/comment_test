@@ -62,42 +62,6 @@ versions_plot <- ggplot(both_versions, aes(year, value, color = version)) +
     ggtitle("Hector version 2.5.0 against version 3.0.0") +
     labs(x = "Year", y = "Value", col = "Variable")
 
-v25_plot <- ggplot(v25, aes(year, value, color = variable)) +
-    geom_line() +
-    facet_grid(variable~scenario, scales = "free") +
-    theme(axis.text = element_text(size = 7)) +
-    scale_color_manual(labels = c("atmos_c (Pg C)", "Ftot (W/m2)", "Tgav (degC)"),
-                         values = c("plum4", "lightpink3", "goldenrod")) +
-    ggtitle("Hector version 2.5.0 outputs") +
-    labs(x = "Year", y = "Value", col = "Variable")
-
-v3_plot <- ggplot(v3, aes(year, value, color = variable)) +
-    geom_line() +
-    facet_grid(variable~scenario, scales = "free") +
-    theme(axis.text = element_text(size = 7)) +
-    scale_color_manual(labels = c("atmos_c (Pg C)", "Ftot (W/m2)", "Tgav (degC)"),
-                       values = c("aquamarine4", "darkblue", "darkseagreen4")) +
-    ggtitle("Hector version 3.0.0 outputs") +
-    labs(x = "Year", y = "Value", col = "Variable")
-
-comp_plot <- grid.arrange(v25_plot, v3_plot)
-
-all_plots <- grid.arrange(comp_plot, versions_plot, diff_plot)
-
 version_diff_plot <- grid.arrange(versions_plot, diff_plot)
 # ggsave("Hector output differences by version.jpg", version_diff_plot, height = 16, width = 16)
-
-#######
-
-test <- differences %>% mutate(fraction = differences$diff / v3$value)
-
-test_plot <- ggplot(test, aes(year, fraction, color = variable)) +
-    geom_point() +
-    facet_grid(variable~scenario, scales = "free") +
-    theme(axis.text = element_text(size = 7)) +
-    scale_color_manual(labels = c("atmos_c (Pg C)", "Ftot (W/m2)", "Tgav (degC)"),
-                       values = c("aquamarine4", "darkblue", "darkseagreen4")) +
-    ggtitle("Percentage difference from v3.0.0") +
-    labs(x = "Year", y = "% difference", col = "Variable") +
-    scale_y_continuous(labels = scales::percent)
 
