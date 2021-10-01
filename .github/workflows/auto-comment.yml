@@ -1,5 +1,5 @@
 name: Modified Auto Comment
-on: [pull_request]
+on: [issues, pull_request]
 jobs:
   run:
     runs-on: ubuntu-latest
