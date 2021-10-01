@@ -12,7 +12,7 @@ jobs:
         env:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          file.path("C:\\Users\\pres520\\Documents\\comment_test\\comment")
+          file.path "C:\\Users\\pres520\\Documents\\comment_test\\comment"
           echo "## Test" > report.md
           cml-publish "Hector output differences by version.jpg" --md >> report.md
           cml-send-comment report.md
