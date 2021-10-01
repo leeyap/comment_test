@@ -10,6 +10,8 @@ jobs:
 
           pullRequestOpened: |
           Thank you for your contribution. Here is how your changes will differ from Hector v2.5.0.
-
+          
+          issueOpened: |
+          You've got an issue.
         
             
