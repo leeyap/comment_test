@@ -1,7 +1,6 @@
 name: report-status
 
 on: [pull_request]
-# run R
 jobs:
   run:
     runs-on: [ubuntu-latest]
