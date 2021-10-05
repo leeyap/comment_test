@@ -8,6 +8,9 @@ jobs:
     container: docker://dvcorg/cml-py3:latest
     steps:
       - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '12'
       - name: Generate report
         env:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
