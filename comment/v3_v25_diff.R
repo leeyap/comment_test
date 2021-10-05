@@ -4,7 +4,7 @@ library(ggplot2)
 library(gridExtra)
 
 # Read in v2.5 data
-v25 <- as.data.frame(read.csv("C:\\Users\\pres520\\Desktop\\Hector\\version25_output.csv"))
+v25 <- as.data.frame(read.csv("\\comment\\version25_output.csv"))
 
 # Remove first column of numbers (1, 2, 3...)
 v25 <- v25 %>% select(scenario, year, variable, value, units)
