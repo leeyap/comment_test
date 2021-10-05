@@ -14,6 +14,6 @@ jobs:
         run: |
           Rscript v3_v25_diff.R
         
-          echo "## Test report" > report.md
+          echo "## Test" > report.md
           cml-publish "Hector output differences by version.jpg" --md >> report.md
           cml-send-comment report.md
