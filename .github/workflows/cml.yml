@@ -17,6 +17,7 @@ jobs:
           install.packages("ggplot2")
           install.packages("dplyr")
           install.packages("gridExtra")
+          install.packages("hector")
         shell: Rscript {0}
         
       - uses: actions/checkout@v2
