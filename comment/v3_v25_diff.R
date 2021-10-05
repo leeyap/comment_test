@@ -22,6 +22,7 @@ vars <- c(ATMOSPHERIC_C(), GLOBAL_TEMP(), RF_TOTAL())
 rcps <- c(rcp26, rcp45, rcp60, rcp85)
 scenarios <- c("rcp26", "rcp45", "rcp60", "rcp85")
 
+# Function to run core and retrieve variables for each scenario
 run_core <- function(scenario, vars) {
     ini <- file.path(inputdir, paste0("hector_", scenario, ".ini"))
     core <- newcore(ini)
@@ -31,6 +32,7 @@ run_core <- function(scenario, vars) {
     fetchvars(core, sd:ed, vars, scenario)
 }
 
+# Run function and create v3 data.frame
 v3 <- lapply(scenarios, run_core, vars)
 v3 <- bind_rows(v3)
 v3 <- v3 %>% mutate(version = "v3.0.0")
@@ -47,7 +49,6 @@ diff_plot <- ggplot(differences, aes(year, diff, color = variable)) +
     ggtitle("Differences in Hector outputs in v3.0.0 relative to v2.5.0") +
     labs(x = "Year", y = "Difference in value", col = "Variable")
 
-
 # ggsave("Hector output differences.jpg", diff_plot, width = 10, height = 6)
 
 # Plot two versions against each other
@@ -63,5 +64,6 @@ versions_plot <- ggplot(both_versions, aes(year, value, color = version)) +
     labs(x = "Year", y = "Value", col = "Variable")
 
 version_diff_plot <- grid.arrange(versions_plot, diff_plot)
-# ggsave("Hector output differences by version.jpg", version_diff_plot, height = 16, width = 16)
+
+ggsave("Hector output differences by version.jpg", version_diff_plot, height = 16, width = 16)
 
