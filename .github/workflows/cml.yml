@@ -11,5 +11,5 @@ jobs:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
         run: |
           echo "## Test" > report.md
-          cml-publish "comment/Hector output differences by version.jpg" --md >> report.md
+          cml-publish comment/Hector output differences by version.jpg --md >> report.md
           cml-send-comment report.md
