@@ -11,7 +11,7 @@ jobs:
       - name: Generate report
         env:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
-        run: |
+        run: 
           echo "## Test" > report.md
           cml-publish "Hector output differences by version.jpg" --md >> report.md
           cml-send-comment report.md
