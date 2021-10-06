@@ -4,6 +4,7 @@ library(ggplot2)
 library(gridExtra)
 
 cat(getwd())
+cat(list.files())
 # Read in v2.5 data
 v25 <- read.csv("version25_output.csv")
 
