@@ -26,7 +26,7 @@ jobs:
         env:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          Rscript comment/v3_v25_diff.R
+          Rscript v3_v25_diff.R
           
           echo "## Test" > report.md
           cml-publish "Hector output differences by version.jpg" --md >> report.md
