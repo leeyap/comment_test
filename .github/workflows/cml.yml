@@ -5,11 +5,10 @@ jobs:
     runs-on: [ubuntu-latest]
     steps:
       - uses: actions/checkout@v2
-    
+      - uses: iterative/setup-cml@v1
       - uses: r-lib/actions/setup-r@master
         with:
           r-version: 'release'
-
       - uses: r-lib/actions/setup-pandoc@master
 
       - name: Install dependencies
@@ -21,7 +20,6 @@ jobs:
           remotes::install_github("jgcri/hector")
         shell: Rscript {0}
         
-      - uses: actions/checkout@v2
       - name: Generate report
         env:
           repo_token: ${{ secrets.GITHUB_TOKEN }}

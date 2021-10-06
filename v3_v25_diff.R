@@ -1,3 +1,5 @@
+message("All done with diff script")
+
 install.packages("ggplot2")
 install.packages("dplyr")
 install.packages("gridExtra")
@@ -73,3 +75,4 @@ version_diff_plot <- grid.arrange(versions_plot, diff_plot)
 
 ggsave("Hector output differences by version.jpg", version_diff_plot, height = 16, width = 16)
 
+message("All done with diff script")
