@@ -1,3 +1,9 @@
+install.packages("ggplot2")
+install.packages("dplyr")
+install.packages("gridExtra")
+install.packages("remotes")
+remotes::install_github("jgcri/hector")
+
 library(dplyr)
 library(ggplot2)
 library(gridExtra)
