@@ -18,14 +18,14 @@ jobs:
           install.packages("gridExtra")
           install.packages("remotes")
           remotes::install_github("jgcri/hector")
+          remotes::install_github("hadley/emo")
         shell: Rscript {0}
         
       - name: Generate report
         env:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          Rscript v3_v25_diff.R
-          
-          echo "## Test" > report.md
-          cml-publish "Hector output differences by version.jpg" --md >> report.md
-          cml-send-comment report.md
+          rmarkdown::render("OutputDifferences.Rmd", run_pandoc = FALSE)
+          cml-send-comment OutputDifferences.md
+        shell: Rscript {0}
+

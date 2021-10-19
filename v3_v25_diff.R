@@ -1,11 +1,5 @@
 message("All done with diff script")
 
-install.packages("ggplot2")
-install.packages("dplyr")
-install.packages("gridExtra")
-install.packages("remotes")
-remotes::install_github("jgcri/hector")
-
 library(dplyr)
 library(ggplot2)
 library(gridExtra)
@@ -53,9 +47,10 @@ diff_plot <- ggplot(differences, aes(year, diff, color = variable)) +
     geom_line() +
     facet_grid(variable~scenario, scales = "free") +
     theme(axis.text = element_text(size = 7)) +
-    scale_color_manual(labels = c("atmos_c (Pg C)", "Ftot (W/m2)", "Tgav (degC)"), values = c("plum4", "lightpink3", "goldenrod")) +
+    scale_color_manual(labels = c("atmos_c (Pg C)", "Ftot (W/m2)", "Tgav (degC)"), values = c("gold", "aquamarine4", "slateblue4")) +
     ggtitle("Differences in Hector outputs in v3.0.0 relative to v2.5.0") +
-    labs(x = "Year", y = "Difference in value", col = "Variable")
+    labs(x = "Year", y = "Difference in value", col = "Variable") +
+    theme_bw()
 
 # ggsave("Hector output differences.jpg", diff_plot, width = 10, height = 6)
 
