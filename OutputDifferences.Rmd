@@ -113,13 +113,15 @@ rownames(error) <- c("atmos_c", "Ftot", "Tgav")
 
 # Find mean of data to normalize
 mean25 <- by(both_versions$v25, both_versions$variable, mean)
+mean25 <- as.data.frame(c(mean25[1], mean25[2], mean25[3]))
 
-# Divide RMSE by means, multiply by 100 to get percentage
-error <- (error / mean25) * 100
-colnames(error) <- "NRMSE (%)"
+# Divide RMSE by means
+NRMSE <- as.data.frame(error[,1] / mean25[,1])
+rownames(NRMSE) <- c("atmos_c", "Ftot", "Tgav")
+colnames(NRMSE) <- "NRMSE"
 
 # Table
-summary_table <- cbind(squares, error)
+summary_table <- cbind(squares, NRMSE)
 print(summary_table)
 
 ```
