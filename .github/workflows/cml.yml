@@ -15,7 +15,7 @@ jobs:
         run: |
           install.packages("ggplot2")
           install.packages("dplyr")
-          install.packages("curl")
+          install.packages("libcurl")
           install.packages("devtools")
           devtools::install_github("jgcri/hector")
           devtools::install_github("hadley/emo")
