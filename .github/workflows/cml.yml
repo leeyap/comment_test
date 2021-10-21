@@ -15,9 +15,9 @@ jobs:
         run: |
           install.packages("ggplot2")
           install.packages("dplyr")
-          install.packages("devtools")
-          devtools::install_github("jgcri/hector")
-          devtools::install_github("hadley/emo")
+          install.packages("remotes")
+          remotes::install_github("jgcri/hector")
+          remotes::install_github("hadley/emo")
         shell: Rscript {0}
         
       - name: Generate report
