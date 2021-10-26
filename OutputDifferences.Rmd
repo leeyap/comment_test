@@ -8,14 +8,13 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## Differences in Hector outputs
 
-``` {r greeting, echo = FALSE}
-cat("Hello, this is `leeyabot`! ")
-emo::ji("robot")
+Hello, this is `leeyabot`! 
 
+``` {r greeting, echo = FALSE, eval=FALSE}
+#emo::ji("robot")
 ```
 
 The current pull request's outputs differ from `master` as follows:
-
 
 ``` {r differences, echo = FALSE, message = FALSE}
 # Load packages
