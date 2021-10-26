@@ -29,4 +29,6 @@ jobs:
         shell: Rscript {0}
 
       - name: Post comment
+        env:
+          GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
         run: cml-send-comment OutputDifferences.knit.md
