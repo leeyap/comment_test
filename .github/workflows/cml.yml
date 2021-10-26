@@ -17,11 +17,8 @@ jobs:
         env:
           GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          install.packages("ggplot2")
-          install.packages("dplyr")
-          install.packages("devtools")
-          devtools::install_github("jgcri/hector")
-          devtools::install_github("hadley/emo")
+          install.packages(c("ggplot2", "rmarkdown", "dplyr", "remotes")
+          remotes::install_github(c("jgcri/hector", "hadley/emo"))
         shell: Rscript {0}
         
       - name: Generate report
