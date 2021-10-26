@@ -27,7 +27,3 @@ jobs:
           rmarkdown::render("OutputDifferences.Rmd", run_pandoc = FALSE)
         shell: Rscript {0}
 
-      - name: Post comment
-        env:
-          REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: cml-send-comment OutputDifferences.knit.md
