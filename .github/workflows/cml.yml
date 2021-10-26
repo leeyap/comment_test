@@ -11,6 +11,8 @@ jobs:
           r-version: 'release'
       - uses: r-lib/actions/setup-pandoc@master
 
+      - name: Install libcurl
+        run: sudo apt-get install libcurl4-openssl-dev
       - name: Install dependencies
         run: |
           install.packages("ggplot2")
