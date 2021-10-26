@@ -26,6 +26,6 @@ jobs:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
         run: |
           rmarkdown::render("OutputDifferences.Rmd", run_pandoc = FALSE)
-          cml-send-comment OutputDifferences.knit.md
+          cml-send-comment test.md
         shell: Rscript {0}
 
