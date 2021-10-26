@@ -14,6 +14,8 @@ jobs:
       - name: Install libcurl
         run: sudo apt-get install libcurl4-openssl-dev
       - name: Install dependencies
+        env:
+          GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
         run: |
           install.packages("ggplot2")
           install.packages("dplyr")
