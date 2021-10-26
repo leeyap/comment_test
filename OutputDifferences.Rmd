@@ -10,7 +10,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 Hello, this is `leeyabot`! `r emo::ji("robot")`  
 
-The current pull request's outputs differ from `master` as follows:
+The current pull request's outputs differ from `master` as follows:  
 
 
 ``` {r differences, echo = FALSE, message = FALSE}
@@ -58,6 +58,7 @@ v3 <- v3 %>% mutate(version = "v3.0.0")
 differences <- v25 %>% mutate(diff = v3$value - v25$value)
 differences <- differences %>% select(scenario, year, variable, units, version, diff)
 ```
+
 
 ```{r summary-table, echo= FALSE}
 
@@ -132,5 +133,4 @@ diff_plot <- ggplot(differences, aes(year, diff, color = variable)) +
     theme_bw()
     
 diff_plot
-
 ```
