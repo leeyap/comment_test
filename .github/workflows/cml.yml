@@ -26,6 +26,9 @@ jobs:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
         run: |
           rmarkdown::render("OutputDifferences.Rmd", run_pandoc = FALSE)
-          cml-send-comment test.md
+          echo "## Test" > report.md
+          cml-publish "Hector output differences by version.jpg" --md >> report.md
+          cml-send-comment report.md
+          
         shell: Rscript {0}
 
