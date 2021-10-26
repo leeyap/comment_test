@@ -21,7 +21,6 @@ The current pull request's outputs differ from `master` as follows:
 # Load packages
 library(dplyr)
 library(ggplot2)
-library(gridExtra)
 library(hector)
 library(emo)
 
@@ -137,5 +136,4 @@ diff_plot <- ggplot(differences, aes(year, diff, color = variable)) +
     theme_bw()
     
 diff_plot
-
 ```
