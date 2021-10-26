@@ -1,5 +1,5 @@
 name: Modified Auto Comment
-on: [pull_request]
+on: [issues, pull_request]
 jobs:
   run:
     runs-on: ubuntu-latest
@@ -9,9 +9,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
           pullRequestOpened: |
-          Thank you for your contribution. Here is how your changes will differ from Hector v2.5.0.
+            Thank you for your contribution. Here is how your changes will differ from Hector v2.5.0.
           
           issuesOpened: |
-          You've got an issue.
-        
-            
+            You've got an issue.
