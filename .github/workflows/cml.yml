@@ -1,5 +1,5 @@
 name: report-status
-on: [push, pull_request]
+on: [pull_request]
 jobs:
   run:
     runs-on: [ubuntu-latest]
