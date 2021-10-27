@@ -113,12 +113,11 @@ colnames(NRMSE) <- "NRMSE"
 
 # Table
 summary_table <- cbind(squares, NRMSE)
-knitr::kable(summary_table, "simple")
-
+knitr::kable(summary_table, digits = 3)
 ```
 
 
-``` {r graphs, echo = FALSE, fig.width = 12, fig.height = 9}
+``` {r graphs, echo = FALSE, fig.width = 12, fig.height = 6}
 # Just the numerical differences
 diff_plot <- ggplot(differences, aes(year, diff, color = variable)) +
     geom_line() +
@@ -127,6 +126,5 @@ diff_plot <- ggplot(differences, aes(year, diff, color = variable)) +
     ggtitle("Differences in Hector outputs in v3.0.0 relative to v2.5.0") +
     labs(x = "Year", y = "Difference in value", col = "Variable") +
     theme_bw()
-    
-diff_plot
+ggsave("diff_plot.png", plot = diff_plot)
 ```
